@@ -13,8 +13,11 @@ export default function CartContext({ children }) {
 
     if (storeItem) {
       const parsed = JSON.parse(storeItem);
-
-      setCart(parsed || []);
+      if (Array.isArray(parsed)) {
+        setCart(parsed);
+      } else {
+        setCart([]);
+      }
     }
   }, []);
 
