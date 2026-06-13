@@ -4,7 +4,6 @@ export const MainContext = createContext();
 
 export default function CartContext({ children }) {
   const [cart, setCart] = useState([]);
-  console.log(cart, "cart");
 
   const isFirstReander = useRef(true);
 
